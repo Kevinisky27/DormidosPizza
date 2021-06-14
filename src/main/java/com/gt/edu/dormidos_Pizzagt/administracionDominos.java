@@ -5,7 +5,7 @@
  */
 package com.gt.edu.dormidos_Pizzagt;
 
-import com.gt.edu.Dormidos_Pizzagt.conection.MySQLSconexion;
+import com.gt.edu.dominos_Pizzagt.conection.MySQLSconexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -305,9 +305,12 @@ public class administracionDominos extends javax.swing.JFrame {
 
         jLabel5 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        jButton1 = new javax.swing.JButton();
+        btnOrdenar1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         btnOrdenar = new javax.swing.JButton();
+        btnOrdenar2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         cboSucursal = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
@@ -326,6 +329,23 @@ public class administracionDominos extends javax.swing.JFrame {
 
         jLabel5.setText("Cantidad");
 
+        jButton1.setText("jButton1");
+
+        btnOrdenar1.setBackground(new java.awt.Color(255, 255, 255));
+        btnOrdenar1.setFont(new java.awt.Font("Noteworthy", 0, 18)); // NOI18N
+        btnOrdenar1.setForeground(new java.awt.Color(227, 24, 55));
+        btnOrdenar1.setText("Crear Pizza");
+        btnOrdenar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOrdenar1MouseClicked(evt);
+            }
+        });
+        btnOrdenar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrdenar1ActionPerformed(evt);
+            }
+        });
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Dormidos Pizza - Administración");
         setResizable(false);
@@ -336,8 +356,8 @@ public class administracionDominos extends javax.swing.JFrame {
 
         btnOrdenar.setBackground(new java.awt.Color(255, 255, 255));
         btnOrdenar.setFont(new java.awt.Font("Noteworthy", 0, 18)); // NOI18N
-        btnOrdenar.setForeground(new java.awt.Color(227, 24, 55));
-        btnOrdenar.setText("Crear Pizza");
+        btnOrdenar.setForeground(new java.awt.Color(0, 100, 145));
+        btnOrdenar.setText("Ordenes");
         btnOrdenar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnOrdenarMouseClicked(evt);
@@ -349,6 +369,21 @@ public class administracionDominos extends javax.swing.JFrame {
             }
         });
 
+        btnOrdenar2.setBackground(new java.awt.Color(255, 255, 255));
+        btnOrdenar2.setFont(new java.awt.Font("Noteworthy", 0, 18)); // NOI18N
+        btnOrdenar2.setForeground(new java.awt.Color(227, 24, 55));
+        btnOrdenar2.setText("Crear Pizza");
+        btnOrdenar2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOrdenar2MouseClicked(evt);
+            }
+        });
+        btnOrdenar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrdenar2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -356,14 +391,24 @@ public class administracionDominos extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnOrdenar)
-                .addGap(14, 14, 14))
+                .addGap(131, 131, 131))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addContainerGap(699, Short.MAX_VALUE)
+                    .addComponent(btnOrdenar2)
+                    .addGap(4, 4, 4)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
                 .addComponent(btnOrdenar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addContainerGap(16, Short.MAX_VALUE)
+                    .addComponent(btnOrdenar2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
         );
 
         jLabel2.setFont(new java.awt.Font("Marker Felt", 0, 14)); // NOI18N
@@ -536,12 +581,31 @@ public class administracionDominos extends javax.swing.JFrame {
 
     private void btnOrdenarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOrdenarMouseClicked
         // TODO add your handling code here:
-        CrearPizza();
+        ordenes or = new ordenes();
+        or.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnOrdenarMouseClicked
 
     private void btnOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnOrdenarActionPerformed
+
+    private void btnOrdenar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOrdenar1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnOrdenar1MouseClicked
+
+    private void btnOrdenar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnOrdenar1ActionPerformed
+
+    private void btnOrdenar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOrdenar2MouseClicked
+        // TODO add your handling code here:
+        CrearPizza();
+    }//GEN-LAST:event_btnOrdenar2MouseClicked
+
+    private void btnOrdenar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenar2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnOrdenar2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -581,8 +645,11 @@ public class administracionDominos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea TaDes;
     private javax.swing.JButton btnOrdenar;
+    private javax.swing.JButton btnOrdenar1;
+    private javax.swing.JButton btnOrdenar2;
     private javax.swing.JComboBox<String> cboPizzas;
     private javax.swing.JComboBox<String> cboSucursal;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

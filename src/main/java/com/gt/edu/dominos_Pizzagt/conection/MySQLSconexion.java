@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.gt.edu.Dormidos_Pizzagt.conection;
+package com.gt.edu.dominos_Pizzagt.conection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
